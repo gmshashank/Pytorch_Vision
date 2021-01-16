@@ -12,7 +12,7 @@ For a Basic Network, achieve an accuracy of **99.4%** on the **MNIST** dataset w
 ###	Solution: 
 Below are 10 Code Iterations to target this problem. 
 
-###Iteration 1 - Basic Setup
+### Iteration 1 - Basic Setup
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_1_Setup.ipynb)
 
@@ -33,7 +33,7 @@ Below are 10 Code Iterations to target this problem.
 	-   Model is over-fitting
 
 
-###Iteration 2 - Basic Skeleton
+### Iteration 2 - Basic Skeleton
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_2_Basic_Skeleton.ipynb)
 
@@ -50,7 +50,7 @@ Below are 10 Code Iterations to target this problem.
 	-   We see some over-fitting
 
 
-###Iteration 3 - Lighter Model
+### Iteration 3 - Lighter Model
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_3_Lighter_Model.ipynb)
 
@@ -67,7 +67,7 @@ Below are 10 Code Iterations to target this problem.
 	-   No over-fitting, model is capable if pushed further
 
 
-###Iteration 4 - BatchNormalization
+### Iteration 4 - BatchNormalization
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_4_BatchNorm.ipynb)
 
@@ -84,7 +84,7 @@ Below are 10 Code Iterations to target this problem.
 	-   Even if the model is pushed further, it won't be able to get to 99.4
 
 
-###Iteration 5 - Regularization
+### Iteration 5 - Regularization
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_5_Regularization.ipynb)
 
@@ -101,7 +101,7 @@ Below are 10 Code Iterations to target this problem.
 	-   We are also not using Global Average Pooling(GAP), but still using big sized kernel
 
 
-###Iteration 6 - Global Average Pooling (GAP)
+### Iteration 6 - Global Average Pooling (GAP)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_6_Global_Average_Pooling.ipynb)
 
@@ -118,7 +118,7 @@ Below are 10 Code Iterations to target this problem.
 	-   We are also not using Global Average Pooling(GAP), but still using big sized kernel
 
 
-###Iteration 7 - Increasing Capacity
+### Iteration 7 - Increasing Capacity
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_7_Increasing_Capacity.ipynb)
 
@@ -138,7 +138,7 @@ Below are 10 Code Iterations to target this problem.
 	-   We can also increase the capacity of the model by adding a layer after GAP!
 
 	
-###Iteration 8 - Final_Model
+### Iteration 8 - Final_Model
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_8_Final_Model.ipynb)
 
@@ -157,7 +157,7 @@ Below are 10 Code Iterations to target this problem.
 	-   It is not over-fitting
 
 
-###Iteration 9 - Image_Augmentation
+### Iteration 9 - Image_Augmentation
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_9_Image_Augmentation.ipynb)
 
@@ -174,7 +174,7 @@ Below are 10 Code Iterations to target this problem.
 	-   The test accuracy is also up, which means our test data had few images which had transformation difference w.r.t. train dataset
 
 
-###Iteration 10 - LR_scheduler
+### Iteration 10 - LR_scheduler
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_10_LR_scheduler.ipynb)
 
