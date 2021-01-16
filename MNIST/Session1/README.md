@@ -89,7 +89,7 @@ Below are 10 Code Iterations to target this problem.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_5_Regularization.ipynb)
 
 -   #### Target
-	-   Add Batch-norm to increase model efficiency
+	-   Add Regularization, Dropout
 
 -   #### Results:
 	-   Parameters: 11k (10,970)
@@ -115,7 +115,6 @@ Below are 10 Code Iterations to target this problem.
 
 -   #### Analysis:
 	-   Since we have reduced model capacity, reduction in performance is expected
-	-   We are also not using Global Average Pooling(GAP), but still using big sized kernel
 
 
 ### Iteration 7 - Increasing Capacity
