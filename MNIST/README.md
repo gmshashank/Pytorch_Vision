@@ -1,4 +1,4 @@
-# Session 1 - [MNIST 99.4% Test Accuracy](MNIST/Session1/README.md)
+# [Session 1 - MNIST 99.4% Test Accuracy](Session1/README.md)
 
 ###	Objective:
 For a Basic Network, achieve an accuracy of **99.4%** on the **MNIST** dataset with the following constraints:
@@ -8,7 +8,7 @@ For a Basic Network, achieve an accuracy of **99.4%** on the **MNIST** dataset w
 - Less than **20** Epochs
 - No fully connected layers
 
-# Session 2 - [MNIST 99.4% Test Accuracy](MNIST/Session2/README.md)
+# [Session 2 - MNIST 99.4% Test Accuracy](Session2/README.md)
 
 ###	Objective:
 For a Basic Network, achieve an accuracy of **99.4%** on the **MNIST** dataset with the following constraints:
