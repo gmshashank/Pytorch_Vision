@@ -53,7 +53,7 @@ Below are 4 Code Iterations to target this problem.
 
 ### Iteration 3 - Global Average Pooling (GAP)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_6_Global_Average_Pooling.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session2/3_Global_Average_Pooling.ipynb)
 
 -   #### Target
 	-   Add GAP and remove the last BIG kernel
@@ -69,7 +69,7 @@ Below are 4 Code Iterations to target this problem.
 	
 ### Iteration 4 - Regularization and BatchNormalization
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session1/1_4_BatchNorm.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session2/4_Regularization(Batch_Normalization_Dropout=0_05).ipynb)
 
 -   #### Target
 	-   Add Batch-norm to increase model efficiency
