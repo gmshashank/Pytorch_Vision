@@ -1,7 +1,13 @@
 # Session 3 - MNIST 99.4% Test Accuracy using Ghost Batch Normalization(GBN) and Regularization (L1 and L2)
 
 ###	Objective:
-Using your best Session2 code, and run below versions for 25 epochs and report findings:
+Using your best Session2 Network, achieve an accuracy of **99.4%** on the **MNIST** dataset with the following constraints:
+
+- 99.4% validation accuracy
+- Less than **10k** Parameters
+- Less than **25** Epochs
+- No fully connected layers
+- report findings:
    1. with L1 + BN
    2. with L2 + BN
    3. with L1 and L2 with BN
@@ -14,7 +20,7 @@ Below are the Code Iterations to target this problem.
 ### Iteration 1 - Using GBN, L1 Loss, L2 Loss
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session3/3_Regularization(GBN_BN_Dropout).ipynb)
-[![nbviewer](https://img.shields.io/badge/render-nbviewer-orange.svg)](https://colab.research.google.com/github/gmshashank/pytorch_vision/blob/main/MNIST/Session3/3_Regularization(GBN_BN_Dropout).ipynb)
+[![nbviewer](https://img.shields.io/badge/render-nbviewer-orange.svg)](http://nbviewer.jupyter.org/github/gmshashank/pytorch_vision/blob/main/MNIST/Session3/3_Regularization(GBN_BN_Dropout).ipynb)
 
 
 -   #### Target
