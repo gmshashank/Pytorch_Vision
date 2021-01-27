@@ -44,6 +44,7 @@ Below are the Code Iterations to target this problem.
 
 ###	Model design
 
+```
 ----------------------------------------------------------------
 		Layer (type)               Output Shape         Param #
 ================================================================
@@ -86,6 +87,7 @@ Forward/backward pass size (MB): 0.87
 Params size (MB): 0.04
 Estimated Total Size (MB): 0.91
 ----------------------------------------------------------------
+```
 
 ![](images/validation_accuracy.png)
 
