@@ -44,45 +44,83 @@ Below are the Code Iterations to target this problem.
 
 ###	Model design
 
-		----------------------------------------------------------------
-				Layer (type)               Output Shape         Param #
-		================================================================
-					Conv2d-1           [-1, 16, 26, 26]             144
-					  ReLU-2           [-1, 16, 26, 26]               0
-			   BatchNorm2d-3           [-1, 16, 26, 26]              32
-				   Dropout-4           [-1, 16, 26, 26]               0
-					Conv2d-5           [-1, 16, 24, 24]           2,304
-					  ReLU-6           [-1, 16, 24, 24]               0
-			   BatchNorm2d-7           [-1, 16, 24, 24]              32
-				   Dropout-8           [-1, 16, 24, 24]               0
-					Conv2d-9           [-1, 16, 24, 24]             256
-					 ReLU-10           [-1, 16, 24, 24]               0
-				MaxPool2d-11           [-1, 16, 12, 12]               0
-				   Conv2d-12           [-1, 16, 10, 10]           2,304
-					 ReLU-13           [-1, 16, 10, 10]               0
-			  BatchNorm2d-14           [-1, 16, 10, 10]              32
-				  Dropout-15           [-1, 16, 10, 10]               0
-				   Conv2d-16             [-1, 16, 8, 8]           2,304
-					 ReLU-17             [-1, 16, 8, 8]               0
-			  BatchNorm2d-18             [-1, 16, 8, 8]              32
-				  Dropout-19             [-1, 16, 8, 8]               0
-				   Conv2d-20             [-1, 10, 6, 6]           1,440
-					 ReLU-21             [-1, 10, 6, 6]               0
-			  BatchNorm2d-22             [-1, 10, 6, 6]              20
-				  Dropout-23             [-1, 10, 6, 6]               0
-				   Conv2d-24             [-1, 10, 6, 6]             900
-					 ReLU-25             [-1, 10, 6, 6]               0
-			  BatchNorm2d-26             [-1, 10, 6, 6]              20
-				  Dropout-27             [-1, 10, 6, 6]               0
-				AvgPool2d-28             [-1, 10, 1, 1]               0
-				   Conv2d-29             [-1, 10, 1, 1]             100
-		================================================================
-		Total params: 9,920
-		Trainable params: 9,920
-		Non-trainable params: 0
-		----------------------------------------------------------------
-		Input size (MB): 0.00
-		Forward/backward pass size (MB): 0.87
-		Params size (MB): 0.04
-		Estimated Total Size (MB): 0.91
-		----------------------------------------------------------------
+```
+----------------------------------------------------------------
+		Layer (type)               Output Shape         Param #
+================================================================
+			Conv2d-1           [-1, 16, 26, 26]             144
+			  ReLU-2           [-1, 16, 26, 26]               0
+	   BatchNorm2d-3           [-1, 16, 26, 26]              32
+		   Dropout-4           [-1, 16, 26, 26]               0
+			Conv2d-5           [-1, 16, 24, 24]           2,304
+			  ReLU-6           [-1, 16, 24, 24]               0
+	   BatchNorm2d-7           [-1, 16, 24, 24]              32
+		   Dropout-8           [-1, 16, 24, 24]               0
+			Conv2d-9           [-1, 16, 24, 24]             256
+			 ReLU-10           [-1, 16, 24, 24]               0
+		MaxPool2d-11           [-1, 16, 12, 12]               0
+		   Conv2d-12           [-1, 16, 10, 10]           2,304
+			 ReLU-13           [-1, 16, 10, 10]               0
+	  BatchNorm2d-14           [-1, 16, 10, 10]              32
+		  Dropout-15           [-1, 16, 10, 10]               0
+		   Conv2d-16             [-1, 16, 8, 8]           2,304
+			 ReLU-17             [-1, 16, 8, 8]               0
+	  BatchNorm2d-18             [-1, 16, 8, 8]              32
+		  Dropout-19             [-1, 16, 8, 8]               0
+		   Conv2d-20             [-1, 10, 6, 6]           1,440
+			 ReLU-21             [-1, 10, 6, 6]               0
+	  BatchNorm2d-22             [-1, 10, 6, 6]              20
+		  Dropout-23             [-1, 10, 6, 6]               0
+		   Conv2d-24             [-1, 10, 6, 6]             900
+			 ReLU-25             [-1, 10, 6, 6]               0
+	  BatchNorm2d-26             [-1, 10, 6, 6]              20
+		  Dropout-27             [-1, 10, 6, 6]               0
+		AvgPool2d-28             [-1, 10, 1, 1]               0
+		   Conv2d-29             [-1, 10, 1, 1]             100
+================================================================
+Total params: 9,920
+Trainable params: 9,920
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.00
+Forward/backward pass size (MB): 0.87
+Params size (MB): 0.04
+Estimated Total Size (MB): 0.91
+----------------------------------------------------------------
+```
+
+![](images/validation_accuracy.png)
+
+
+### Miss-classified Images
+
+1. L1 + BN	
+
+	![L1 + BN](images/(L1 + BN)_missclassified_images.jpg)
+
+2. L2 + BN
+
+	![L2 + BN](images/(L2 + BN)_missclassified_images.jpg)
+
+3. L1 + L2 + BN
+
+	![L1 + L2 + BN](images/(L1 + L2 + BN)_missclassified_images.jpg)
+
+4. GBN
+
+	![GBN](images/(GBN)_missclassified_images.jpg)
+	
+5. L1 + GBN
+
+	![L1 + GBN](images/(L1 + GBN)_missclassified_images.jpg)
+
+6. L2 + GBN
+
+	![L2 + GBN](images/(L2 + GBN)_missclassified_images.jpg)
+	
+7. L1 + L2 + GBN
+
+	![L1 + L2 + GBN](images/(L1 + L2 + GBN)_missclassified_images.jpg)
+	
+
+---
