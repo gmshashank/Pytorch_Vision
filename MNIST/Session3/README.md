@@ -44,7 +44,6 @@ Below are the Code Iterations to target this problem.
 
 ###	Model design
 
-```
 ----------------------------------------------------------------
 		Layer (type)               Output Shape         Param #
 ================================================================
@@ -87,40 +86,12 @@ Forward/backward pass size (MB): 0.87
 Params size (MB): 0.04
 Estimated Total Size (MB): 0.91
 ----------------------------------------------------------------
-```
 
 ![](images/validation_accuracy.png)
 
 
-### Miss-classified Images
-
-1. L1 + BN	
-
-	![L1 + BN](images/(L1 + BN)_missclassified_images.jpg)
-
-2. L2 + BN
-
-	![L2 + BN](images/(L2 + BN)_missclassified_images.jpg)
-
-3. L1 + L2 + BN
-
-	![L1 + L2 + BN](images/(L1 + L2 + BN)_missclassified_images.jpg)
-
-4. GBN
+### Miss-classified Images for GBN
 
 	![GBN](images/(GBN)_missclassified_images.jpg)
 	
-5. L1 + GBN
-
-	![L1 + GBN](images/(L1 + GBN)_missclassified_images.jpg)
-
-6. L2 + GBN
-
-	![L2 + GBN](images/(L2 + GBN)_missclassified_images.jpg)
-	
-7. L1 + L2 + GBN
-
-	![L1 + L2 + GBN](images/(L1 + L2 + GBN)_missclassified_images.jpg)
-	
-
 ---
