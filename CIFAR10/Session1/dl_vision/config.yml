@@ -1,0 +1,33 @@
+name: CIFAR10
+save_dir: saved/
+seed: 9
+target_device: cuda
+
+arch:
+  type: CIFAR10_Model
+  args: 
+    dropout_value: 0
+
+transforms:
+  type: CIFAR10Transforms
+  args: {}
+
+data_loader:
+  type: CIFAR10DataLoader
+  args:
+    batch_size: 128
+    data_dir: data/
+    num_workers: 4
+    shuffle: True
+
+criterion: cross_entropy_loss
+
+optimizer:
+  type: SGD
+  args:
+    lr: 0.001
+    momentum: 0.9
+    weight_decay: 0.0005
+
+training:
+  epochs: 50
