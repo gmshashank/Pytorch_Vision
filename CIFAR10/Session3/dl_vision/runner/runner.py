@@ -5,7 +5,7 @@ import pprint
 
 # import model.model as model_arch
 import model.loss as model_loss
-import data_loader.transforms as model_transforms
+import data_loader.augmentations as augmentations
 import data_loader.data_loaders as model_data_loaders
 import utils.plot as plot
 
@@ -52,7 +52,7 @@ class Runner:
         model_params = setup_model_params(model, config["optimizer"])
         optimizer = get_instance(optim, "optimizer", config, model_params)
 
-        self.transforms = get_instance(model_transforms, "transforms", config)
+        self.transforms = get_instance(augmentations, "transforms", config)
 
         # train and test dataloaders
         self.data_loader = get_instance(
@@ -92,7 +92,8 @@ class Runner:
             data, target, self.trainer.model, self.trainer.device, target_layers
         )
 
-        unorm = model_transforms.UnNormalize(
+        # get the denomarlization function
+        unorm = augmentations.UnNormalize(
             mean=self.transforms.mean, std=self.transforms.std
         )
         plot_gradcam(
@@ -135,3 +136,22 @@ class Runner:
 
         data = misclassified[:25]
         target = misclassified_target[:25]
+
+        # get generated GradCAM data
+        gcam_layers, predicted_probs, predicted_classes = get_gradcam(
+            data, target, self.trainer.model, self.trainer.device, target_layers
+        )
+
+        # get denormalization function
+        unorm = augmentations.UnNormalize(
+            mean=self.transforms.mean, std=self.transforms.std
+        )
+
+        plot_gradcam(
+            gcam_layers,
+            data,
+            target,
+            predicted_classes,
+            self.data_loader.class_names,
+            unorm,
+        )
