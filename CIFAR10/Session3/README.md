@@ -1,4 +1,4 @@
-# Session 2 - CIFAR10 85.0% Test Accuracy using ResNet18 using Augmentations
+# Session 3 - CIFAR10 85.0% Test Accuracy using ResNet18 using Augmentations
 
 ## TOC
 
