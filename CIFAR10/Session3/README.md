@@ -1,4 +1,4 @@
-# Session 2 - CIFAR10 85.0% Test Accuracy using ResNet18 using Augmentations
+# Session 3 - CIFAR10 85.0% Test Accuracy using ResNet18 using Augmentations
 
 ## TOC
 
@@ -8,7 +8,7 @@
 1. [Samples](#samples)
 1. [References](#references)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github.com/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session3/CIFAR10_session3.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session3/CIFAR10_session3.ipynb)
 
 
 ## Overview
@@ -25,6 +25,16 @@ Train a Neural Network with the following constraints:
 Deeper neural networks are more difficult to train. One big problem of a deep network is the vanishing gradient problem.
 To solve this problem, the authors proposed to use a reference to the previous layer to compute the output at a given layer. 
 In ResNet, the output from the previous layer, called residual, is added to the output of the current layer.
+
+**Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization**
+
+The algorithm provides a way to look into what particular parts of the image influenced the whole model’s decision for a specifically assigned label.
+It is particularly useful in analyzing wrongly classified samples.The intuition behind the algorithm is based upon the fact that the model must have seen 
+some pixels (or regions of the image) and decided on what object is present in the image. This influence in the mathematical terms can be described with a gradient. 
+The algorithm starts with finding the gradient of the most dominant logit with respect to the latest activation map in the model. This can be interpret as some encoded features 
+that ended up activated in the final activation map and persuaded the model as a whole to choose that particular logit (subsequently the corresponding class). 
+The gradients are then pooled channel-wise, and the activation channels are weighted with the corresponding gradients, yielding the collection of weighted activation channels. 
+By inspecting these channels, we can tell which ones played the most significant role in the decision of the class.
 
 
 ## Model Summary
