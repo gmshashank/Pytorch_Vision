@@ -46,8 +46,8 @@ def main():
     print("model_summary")
     runner.model_summary(input_size=(3, 32, 32))
 
-    # # Find LR
-    # runner.find_lr()
+    # Find LR
+    runner.find_lr()
 
     # # Training the model
     # # runner.trainer.train()
@@ -66,7 +66,7 @@ def main():
     # # plot misclassified
     # runner.plot_misclassified(target_layers=target_layers)
 
-    print("done")
+    # print("done")
 
 
 if __name__ == "__main__":

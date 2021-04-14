@@ -4,7 +4,7 @@ seed: 9
 target_device: cuda
 
 arch:
-  type: CIFAR10_ResNet_custom
+  type: CIFAR10_ResNet_Custom
   args: {}
 
 transforms:
@@ -39,4 +39,4 @@ optimizer:
 
 training:
   epochs: 24
-  
+

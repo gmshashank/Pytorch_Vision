@@ -256,9 +256,7 @@ class CIFAR10_Model(BaseModel):
             output_size=1
         )  # In: 4x4x128 | Out: 1x1x128 | RF: 108x108
 
-        self.layer5 = nn.Sequential(
-            nn.Linear(in_features=128, out_features=10),
-        )
+        self.layer5 = nn.Sequential(nn.Linear(in_features=128, out_features=10),)
 
     def forward(self, x):
         x = self.layer1(x)

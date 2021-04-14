@@ -51,6 +51,7 @@ class CIFAR10DataLoader:
         }
 
     def get_loaders(self):
-        return DataLoader(self.train_dataset, **self.init_kwargs), DataLoader(
-            self.test_dataset, **self.init_kwargs
+        return (
+            DataLoader(self.train_dataset, **self.init_kwargs),
+            DataLoader(self.test_dataset, **self.init_kwargs),
         )
