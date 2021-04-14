@@ -107,6 +107,8 @@ class Runner:
     def plot_metrics(self):
         logger.info("Plotting the Metrics.")
         plt = plot.model_metrics(self.trainer.train_metric, self.trainer.test_metric)
+        plot.plot_lr_metric(self.trainer.lr_metric)
+
         return plt
 
     def plot_gradcam(self, target_layers):

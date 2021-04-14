@@ -8,7 +8,7 @@
 1. [Samples](#samples)
 1. [References](#references)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session5/CIFAR10_session4.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session5/CIFAR10_session5.ipynb)
 
 
 ## Overview
