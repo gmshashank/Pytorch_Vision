@@ -8,7 +8,7 @@
 1. [Samples](#samples)
 1. [References](#references)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session4/CIFAR10_session4.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session5/CIFAR10_session4.ipynb)
 
 
 ## Overview
@@ -130,14 +130,14 @@ Estimated Total Size (MB): 31.22
 
 ## Loss Graphs
 
-![Loss Graphs](https://github.com/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session4/images/metrics.png)
+![Loss Graphs](https://github.com/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session5/images/metrics.png)
 
 
 ## Samples
 
-![GradCAM](https://github.com/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session4/images/GradCAM.png)
+![GradCAM](https://github.com/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session5/images/GradCAM.png)
 
-![Misclassified GradCAM](https://github.com/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session4/images/misclassified.png)
+![Misclassified GradCAM](https://github.com/gmshashank/Pytorch_Vision/blob/main/CIFAR10/Session5/images/misclassified.png)
 
 
 ## References

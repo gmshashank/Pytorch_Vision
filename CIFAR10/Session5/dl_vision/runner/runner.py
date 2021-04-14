@@ -51,6 +51,7 @@ class Runner:
         model, device = setup_device(model, config["target_device"])
 
         model_params = setup_model_params(model, config["optimizer"])
+
         optimizer = get_instance(optim, "optimizer", config, model_params)
 
         self.transforms = get_instance(augmentations, "transforms", config)
@@ -67,6 +68,7 @@ class Runner:
 
         batch_scheduler = False
         if config["lr_scheduler"]["type"] == "OneCycleLR":
+            print("OneCycleLR")
             logger.info("Building: torch.optim.lr_scheduler.OneCycleLR")
             max_at_epoch = config["lr_scheduler"]["max_lr_at_epoch"]
             pct_start = (
@@ -211,12 +213,12 @@ class Runner:
         model_params = setup_model_params(model, config["optimizer"])
         optimizer = get_instance(optim, "optimizer", config, model_params)
 
-        self.transforms = get_instance(augmentations, "transforms", config)
+        # self.transforms = get_instance(augmentations, "transforms", config)
 
         # Loss Function
         criterion = getattr(model_loss, config["criterion"])
 
-        self.lr_finder = LRFinder(model, optimizer, criterion, device)
+        self.lr_finder = LRFinder(model, optimizer, criterion, device="cuda")
 
         lr_finder_epochs = config["lr_finder"]["epochs"]
 
@@ -268,3 +270,82 @@ class Runner:
 
         self.trainer.train()
         logger.info("Finished.")
+
+    def find_lr1(self):
+        from torch_lr_finder import LRFinder as LR_Finder
+
+        logger.info("Finding best Learning Rate.")
+        config = self.config
+
+        if self.custom_model is True:
+            import model.custom_model as model_arch
+
+            print("custom_model")
+        else:
+            import model.model as model_arch
+
+            print("local_model")
+
+        # setup seed for reproducibility of results
+        setup_seed(config["seed"])
+
+        # create model instance
+        model = get_instance(model_arch, "arch", config)
+
+        # setup model with device
+        model, device = setup_device(model, config["target_device"])
+
+        model_params = setup_model_params(model, config["optimizer"])
+        optimizer = get_instance(optim, "optimizer", config, model_params)
+
+        # self.transforms = get_instance(augmentations, "transforms", config)
+
+        # Loss Function
+        criterion = getattr(model_loss, config["criterion"])()
+
+        self.lr_finder = LR_Finder(model, optimizer, criterion, device="cuda")
+
+        lr_finder_epochs = config["lr_finder"]["epochs"]
+        logger.info(f"Running LR-Test for {lr_finder_epochs} epochs")
+        # my method
+        self.lr_finder.range_test(
+            self.trainer.train_loader,
+            start_lr=1e-3,
+            end_lr=1,
+            num_iter=len(self.trainer.test_loader) * lr_finder_epochs,
+            step_mode="linear",
+        )
+
+        # leslie smith method
+        # self.lr_finder.range_test(self.trainer.train_loader, val_loader = self.trainer.test_loader,
+        # end_lr=1, num_iter=len(self.trainer.train_loader), step_mode='linear')
+
+        # fast ai method
+        # self.lr_finder.range_test(
+        #     self.trainer.train_loader, end_lr=100, num_iter=len(self.trainer.train_loader))
+
+        self.best_lr = self.lr_finder.history["lr"][
+            self.lr_finder.history["loss"].index(self.lr_finder.best_loss)
+        ]
+
+        sorted_lrs = [
+            x
+            for _, x in sorted(
+                zip(self.lr_finder.history["loss"], self.lr_finder.history["lr"])
+            )
+        ]
+
+        logger.info(f"sorted lrs : {sorted_lrs[:10]}")
+
+        logger.info(f"found the best lr : {self.best_lr}")
+
+        logger.info("plotting lr_finder")
+
+        plt.style.use("dark_background")
+        self.lr_finder.plot()
+
+        # reset the model and the optimizer
+        self.lr_finder.reset()
+        plt.show()
+
+        del model, optimizer, criterion
