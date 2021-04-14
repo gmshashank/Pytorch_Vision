@@ -49,24 +49,24 @@ def main():
     # Find LR
     runner.find_lr()
 
-    # # Training the model
-    # # runner.trainer.train()
-    # runner.train_lr(use_best_lr=True)
+    # Training the model
+    # runner.trainer.train()
+    runner.train_lr(use_best_lr=True)
 
-    # # plot the metrics
-    # plt = runner.plot_metrics()
+    # plot the metrics
+    plt = runner.plot_metrics()
 
-    # # Saving the plot to file
-    # plt.savefig("Metrics.png")
+    # Saving the plot to file
+    plt.savefig("Metrics.png")
 
-    # # plot GradCAM
-    # target_layers = ["layer1", "layer2", "layer3", "layer4"]
-    # runner.plot_gradcam(target_layers=target_layers)
+    # plot GradCAM
+    target_layers = ["layer1", "layer2", "layer3", "layer4"]
+    runner.plot_gradcam(target_layers=target_layers)
 
-    # # plot misclassified
-    # runner.plot_misclassified(target_layers=target_layers)
+    # plot misclassified
+    runner.plot_misclassified(target_layers=target_layers)
 
-    # print("done")
+    print("done")
 
 
 if __name__ == "__main__":

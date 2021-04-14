@@ -43,3 +43,18 @@ Train a Neural Network with the following constraints:
 4. Use SGD with Momentum.
 5. To achieve 85% Test accuracy.
 6. Plot images using Grad-CAM.
+
+
+
+# [Session 5 - Test Accuracy of **85.0%** on the **CIFAR10** dataset using **ResNet18**, **LR Finder**, **OneCyleLR** and **Data Augmentations**](Session5/README.md)
+
+## Overview
+Train a Neural Network with the following constraints:
+
+1. Use your data loader, model loading, train, and test code to train custom ResNet model on Cifar10
+2. Apply data Transformations using Albumentations library
+3. Implement LR Finder, ReduceLROnPLateau and find best LR to train model
+4. Use One Cycle Policy
+5. Use SGD with Momentum.
+6. To achieve 85% Test accuracy.
+7. Plot images using Grad-CAM.

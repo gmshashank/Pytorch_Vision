@@ -33,6 +33,13 @@ def model_metrics(train_metrics, test_metrics):
     return plt
 
 
+def plot_lr_metric(lr_metric):
+    plt.figure(figsize=(7,5))
+    plt.plot(lr_metric)
+    plt.title("Learning Rate")
+    plt.show()
+
+
 def model_misclassified(misclassified, max_count):
     print(f"Total Misclassified: {len(misclassified)}")
     fig = plt.figure(fig_size=(12, 10))

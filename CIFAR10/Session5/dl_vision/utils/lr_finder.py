@@ -365,8 +365,6 @@ class LRFinder(object):
     def _train_batch(self, train_iter, accumulation_steps, non_blocking_transfer=True):
         self.model.train()
         total_loss = None  # for late initialization
-        print(train_iter)
-        print(next(self.model.parameters()).device)
 
         self.optimizer.zero_grad()
         for i in range(accumulation_steps):
@@ -377,16 +375,10 @@ class LRFinder(object):
 
             # Forward pass
             outputs = self.model(inputs)
-            print(outputs)
-            print(labels)
             loss = self.criterion(outputs, labels)
-            print(loss)
-            print(accumulation_steps)
-            print(non_blocking_transfer)
 
             # Loss should be averaged in each step
             loss /= accumulation_steps
-            print(loss)
 
             # Backward pass
             if IS_AMP_AVAILABLE and hasattr(self.optimizer, "_amp_stash"):
@@ -399,7 +391,6 @@ class LRFinder(object):
                 ) as scaled_loss:
                     scaled_loss.backward()
             else:
-                print(loss)
                 loss.backward()
 
             if total_loss is None:
