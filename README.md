@@ -5,3 +5,4 @@ Computer Vision Example in Pytorch
 
 # [CIFAR10](CIFAR10/README.md)
 
+# [TinyImageNet](TinyImageNet/README.md)
